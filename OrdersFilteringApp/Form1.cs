@@ -182,6 +182,7 @@ namespace OrdersFilteringApp
 					db.SaveChanges();
 				}
 				File.Copy(DbPath, sfd.FileName, true);
+				Log.Information($"Orders saved to file {sfd.FileName}");
 			}
 		}
 
