@@ -75,7 +75,7 @@
 			// 
 			// FilterTimeButton
 			// 
-			FilterTimeButton.Location = new Point(614, 195);
+			FilterTimeButton.Location = new Point(614, 164);
 			FilterTimeButton.Name = "FilterTimeButton";
 			FilterTimeButton.Size = new Size(120, 25);
 			FilterTimeButton.TabIndex = 4;
@@ -114,7 +114,7 @@
 			// 
 			// CancelFilteringButton
 			// 
-			CancelFilteringButton.Location = new Point(599, 164);
+			CancelFilteringButton.Location = new Point(599, 195);
 			CancelFilteringButton.Name = "CancelFilteringButton";
 			CancelFilteringButton.Size = new Size(150, 25);
 			CancelFilteringButton.TabIndex = 8;
