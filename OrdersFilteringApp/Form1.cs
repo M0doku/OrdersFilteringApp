@@ -55,7 +55,6 @@ namespace OrdersFilteringApp
 							DateTime dt = DateTime.ParseExact(values[3] + ' ' + values[4], "yyyy-MM-dd HH:mm:ss",
 										   System.Globalization.CultureInfo.InvariantCulture);
 							ordersList.Add(order = new Order(id, weight, values[2], dt));
-							GetDistricts();
 							Log.Information($"Order added: ID: {order.ID}, Weight: {order.Weight}, District: {order.District}, Time: {order.Time}");
 						}
 						catch (Exception ex)
@@ -64,11 +63,8 @@ namespace OrdersFilteringApp
 							Log.Error("Error is happened: " + ex.Message);
 						}
 					}
+					GetDistricts();
 					OrdersListDataGrid.DataSource = null;
-				}
-				foreach (var order in ordersList)
-				{
-					Debug.WriteLine($"ID: {order.ID}, Weight: {order.Weight}, District: {order.District}, Time: {order.Time}");
 				}
 			}
 		}
@@ -86,12 +82,12 @@ namespace OrdersFilteringApp
 					{
 						ordersList = db.Orders.ToList();
 						OrdersListDataGrid.DataSource = ordersList;
-						OrdersListDataGrid.Columns["Time"].DefaultCellStyle.Format = "G";
-						GetDistricts();
+						OrdersListDataGrid.Columns["Time"].DefaultCellStyle.Format = "G";				
 						foreach (var order in db.Orders)
 						{
 							Log.Information($"Order added: ID: {order.ID}, Weight: {order.Weight}, District: {order.District}, Time: {order.Time}");
 						}
+						GetDistricts();
 					}
 					catch (Exception ex)
 					{
